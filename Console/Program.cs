@@ -11,15 +11,22 @@ namespace Console
         static void Main(string[] args)
         {
             CarManager carManager = new CarManager(new EfCarDal());
-
+carManager.Add(new Car { BrandId = 2, ColorId = 1, DailyPrice = 100, Descriptions = "klklklkH", ModelYear = "2021" });
             foreach (var car in carManager.GetAll())
             {
-                // Console.WriteLine("Adı:" + car.Description +" "+ car.Id + " " + 
-                //    car.ModelYear + " " + car.DailyPrice + " " + car.ColorId + " " + car.BrandId);
-                System.Console.WriteLine(car.Descriptions + " " + car.DailyPrice + " TL");
+                System.Console.WriteLine("Adı:" + car.Descriptions + " " + car.CarId+ " " +car.ModelYear + " " + car.DailyPrice + " " + car.ColorId + " " + car.BrandId);
                 System.Console.WriteLine("----------------------------");
+
+
+                //System.Console.WriteLine(car.Descriptions);
+
             }
-            //carManager.Add(new Car { BrandId = 4, ColorId = 4, CarName = "CarName2", ModelYear = 2004, DailyPrice = 2000, Description = "Description4" });
+            
+
+                //carManager.GetAll();
+                carManager.GetCarsByBrandId(2);
+                carManager.GetCarsBycolorId(3);
+        //carManager.Add(new Car { BrandId = 4, ColorId = 4, CarName = "CarName2", ModelYear = 2004, DailyPrice = 2000, Description = "Description4" });
         }
     }
 }

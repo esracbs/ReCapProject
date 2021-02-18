@@ -17,6 +17,19 @@ namespace Business.Concrete
         {
             _carDal = carDal;
         }
+        public void Add(Car car)
+        {
+
+            if (car.Descriptions.Length > 2 && car.DailyPrice > 0)
+            {
+                Console.WriteLine("Araba eklendi....Algoritmik");
+                _carDal.Add(car);
+            }
+            else
+            {
+                Console.WriteLine("Araba eklenemedi. Araba ismi minimum 2 karakter olmalıdır ve Araba günlük fiyatı 0'dan büyük olmalıdır.");
+            }
+        }
         public List<Car> GetAll()
         {
             return _carDal.GetAll();
@@ -24,12 +37,12 @@ namespace Business.Concrete
 
         public List<Car> GetCarsByBrandId(int id)
         {
-            throw new NotImplementedException();
+            return _carDal.GetAll(c => c.BrandId == id);
         }
 
         public List<Car> GetCarsBycolorId(int id)
         {
-            throw new NotImplementedException();
+            return _carDal.GetAll(c => c.ColorId == id);
         }
     }
 }
