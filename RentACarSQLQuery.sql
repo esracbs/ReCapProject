@@ -19,13 +19,7 @@ CREATE TABLE Brands(
 	BrandName nvarchar(25),
 )
 
-CREATE TABLE Users(
-	UserId int PRIMARY KEY IDENTITY(1,1),
-	FirstName nvarchar(25),
-	LastName nvarchar(25),
-	Email nvarchar(55),
-	Password nvarchar(35),
-)
+
 
 
 
