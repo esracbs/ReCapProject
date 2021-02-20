@@ -1,6 +1,7 @@
 ﻿using DataAccess.Abstract;
 using Entities;
 using Entities.Concrete;
+using Entities.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,12 +27,14 @@ namespace DataAccess.Concrete.InMemory
         public void Add(Car car)
         {
             _cars.Add(car);
+            Console.WriteLine("eklendi");
         }
 
         public void Delete(Car car)
         {
             Car carsToDelete = _cars.SingleOrDefault(p => p.CarId == car.CarId);
             _cars.Remove(carsToDelete);
+            Console.WriteLine("silindi");
 
         }
 
@@ -55,6 +58,11 @@ namespace DataAccess.Concrete.InMemory
             return _cars.Where(c => c.CarId == Id).ToList();
         }
 
+        public List<CarDetailDto> GetCarDetails()
+        {
+            throw new NotImplementedException();
+        }
+
         public void Update(Car car)
         {
             Car carToUpdate=_cars.SingleOrDefault(p => p.CarId == car.CarId);
@@ -63,6 +71,8 @@ namespace DataAccess.Concrete.InMemory
             carToUpdate.ColorId = car.ColorId;
             carToUpdate.DailyPrice = car.DailyPrice;
             carToUpdate.BrandId = car.BrandId;
+
+            Console.WriteLine("Güncellendi!");
         }
     }
 }
