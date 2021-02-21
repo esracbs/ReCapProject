@@ -1,4 +1,5 @@
 ﻿using Business.Abstract;
+using Core.Utilities.Results;
 using DataAccess.Abstract;
 using Entities;
 using Entities.Concrete;
@@ -17,18 +18,20 @@ namespace Business.Concrete
         {
             _carDal = carDal;
         }
-        public void Add(Car car)
+        public IResult Add(Car car)
         {
-
-            if (car.Descriptions.Length > 2 && car.DailyPrice > 0)
-            {
-                Console.WriteLine("Araba eklendi....Algoritmik");
-                _carDal.Add(car);
-            }
-            else
-            {
-                Console.WriteLine("Araba eklenemedi. Araba ismi minimum 2 karakter olmalıdır ve Araba günlük fiyatı 0'dan büyük olmalıdır.");
-            }
+            _carDal.Add(car);
+            return new Result(true, "ürün eklendi");
+            //if (car.Descriptions.Length > 2 && car.DailyPrice > 0)
+            //{
+            //    Console.WriteLine("Araba eklendi....Algoritmik");
+            //    _carDal.Add(car);
+            //    return new Result();
+            //}
+            //else
+            //{
+            //    return Console.WriteLine("Araba eklenemedi. Araba ismi minimum 2 karakter olmalıdır ve Araba günlük fiyatı 0'dan büyük olmalıdır.");
+            //}
         }
         public List<Car> GetAll()
         {
