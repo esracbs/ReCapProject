@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Core.Entities
+namespace Entities.Concrete
 {
-    public interface IDto
+    class User
     {
     }
 }
