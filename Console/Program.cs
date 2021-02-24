@@ -10,16 +10,28 @@ namespace Console
     {
         static void Main(string[] args)
         {
-
             //Deneme();
             //ColorManagerTest();
             //BrandManagerTest();//EfBrandDal'a joinle neyi istediğimizi söylersek çıktı verecektir
+            //GetCarDetailsTest();
 
+            // carManager.Add(new Car { BrandId = 3, ColorId = 1, DailyPrice = 145, ModelYear = "2014", Descriptions = "Satılır" });
+            // carManager.Add(new Car { BrandId = 1, ColorId = 5, DailyPrice = 800, Descriptions = "klklklkH", ModelYear = "2021" });
+
+            RentalManager rentalManager = new RentalManager(new EfRentalDal());
+            //rentalManager.Add(new Rental{CarId = 1,CustomerId=1,RentDate = DateTime.Now,ReturnDate = null});
+
+            //foreach (var rental in rentalManager.GetAll().Data)
+            //{
+            //   Console.WriteLine(rental.CarId);
+            //}
+            
+             System.Console.WriteLine(rentalManager.Add(new Rental { CarId = 1, CustomerId = 1, RentDate = new DateTime(2021, 02, 22), ReturnDate = new DateTime(2021, 02, 25) }).Message);
+        }
+
+        private static void GetCarDetailsTest()
+        {
             CarManager carManager = new CarManager(new EfCarDal());
-              // carManager.Add(new Car { BrandId = 3, ColorId = 1, DailyPrice = 145, ModelYear = "2014", Descriptions = "Satılır" });
-           // carManager.Add(new Car { BrandId = 1, ColorId = 5, DailyPrice = 800, Descriptions = "klklklkH", ModelYear = "2021" });
-
-
             var result = carManager.GetCarDetails();
 
             if (result.Success == true)
@@ -34,10 +46,10 @@ namespace Console
             }
             else
             {
-                System.Console.WriteLine (result.Message);
+                System.Console.WriteLine(result.Message);
             }
-
         }
+
         private static void ColorManagerTest()
         {
             ColorManager colorManager = new ColorManager(new EfColorDal());

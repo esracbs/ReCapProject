@@ -13,6 +13,7 @@ namespace Core.DataAccess.EntityFramework
         where TContext : DbContext, new()
     {
         public void Add(TEntity entity)
+
         {
             using (TContext context = new TContext())//using içersine yazılan nesneler using bitince anında garbage collectora geliyor beni bellekten at diyor
                                                      //yani nothwind context bellekten işi bitince atılacak

@@ -8,10 +8,9 @@ namespace Business.Abstract
 {
     public interface IUserService
     {
-        IResult Add(Rental rental);
-        IResult Delete(Rental rental);
-        IResult Update(Rental rental);
-        IDataResult<List<Rental>> GetAll();
-        IDataResult<List<Rental>> GetById(int id);
+        IResult Add(User user);
+        IResult Delete(User user);
+        IResult Update(User user);
+        IDataResult<List<User>> GetAll();
     }
 }
