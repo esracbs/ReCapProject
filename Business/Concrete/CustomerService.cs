@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Business.Abstract
+namespace Business.Concrete
 {
-    public interface ICustomerService
+    public class CustomerService
     {
 
     }
