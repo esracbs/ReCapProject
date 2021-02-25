@@ -50,23 +50,23 @@ namespace Console
             }
         }
 
-        private static void ColorManagerTest()
-        {
-            ColorManager colorManager = new ColorManager(new EfColorDal());
-            foreach (var color in colorManager.GetAll())
-            {
-                System.Console.WriteLine(color.ColorName);
-            }
-        }
+        //private static void ColorManagerTest()
+        //{
+        //    ColorManager colorManager = new ColorManager(new EfColorDal());
+        //    foreach (var color in colorManager.GetAll())
+        //    {
+        //        System.Console.WriteLine(color.ColorName);
+        //    }
+        //}
 
-        private static void BrandManagerTest()
-        {
-            BrandManager brandManager = new BrandManager(new EfBrandDal());
-            foreach (var brand in brandManager.GetAll())
-            {
-                System.Console.WriteLine(brand.BrandName);
-            }
-        }
+        //private static void BrandManagerTest()
+        //{
+        //    BrandManager brandManager = new BrandManager(new EfBrandDal());
+        //    foreach (var brand in brandManager.GetAll())
+        //    {
+        //        System.Console.WriteLine(brand.BrandName);
+        //    }
+        //}
 
         //private static void Deneme()
         //{

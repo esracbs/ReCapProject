@@ -16,5 +16,6 @@ namespace Business.Constants
         internal static string RentalDeleted="Araç silindi";
         internal static string listed="listeleme yapıldı";
         internal static string RentalUpdated="Araç güncellendi";
+        internal static string BrandsListed="marka listelendi";
     }
 }
