@@ -1,4 +1,6 @@
-﻿using DataAccess.Abstract;
+﻿using Business.ValidationRules.FluentValidation;
+using Core.Aspects.Autofac.Validation;
+using DataAccess.Abstract;
 using Entities.Concrete;
 using System;
 using System.Collections.Generic;
@@ -9,6 +11,7 @@ namespace Business.Concrete
 {
     public class CustomerService : ICustomerDal
     {
+        [ValidationAspect(typeof(UserValidator))]
         public void Add(Customer entity)
         {
             throw new NotImplementedException();
